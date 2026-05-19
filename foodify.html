@@ -1,0 +1,227 @@
+
+<!--Archivo: foodify.html
+    Descripcion: Página principal de la aplicación
+    Asignatura: Interacción Persona-Ordenador
+                Tercero de Ingenieria en Informatica.
+                Facultad de Ciencias, Universidad de Salamanca.
+    Curso: 2025/26.
+    Autoras: Mesón Ramos Ana Li y Salvatierra Jugo Catalina
+    Version: 2.1 18/05/26.
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Título de página -->
+    <title>Foodify - Nutrición Inteligente</title>
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="foodify.css">
+    
+    <!-- JS -->
+    <script src="foodify.js" defer></script>
+</head>
+
+<body>
+    <!-- movil -->
+    <div class="movil">
+        
+        <!-- cabecera Foodify-->
+        <h1 class="cabecera_foodify">FOODIFY</h1>  
+        
+        <!-- contenido -->
+        <div class="contenido_movil">
+
+            <!-- inicio -->
+            <div id="vista_inicio" class="view active">
+
+                <!-- titulo seccion -->
+                <h1 class="titulo_seccion"id="home-name"> Hola, Usuario </h1>
+                
+                <!-- subtitulo seccion -->
+                <div class="subtitulo_seccion">
+                    <svg class="icono_seccion">
+                        <polyline points="1 10 5 6 9 8 13 2"/>
+                        <polyline points="9 2 13 2 13 6"/></svg>
+                    <span class="subtitulo_seccion" id="home-goal"> Mantenerte en forma</span>
+                </div>
+
+                <!-- contenido seccion -->
+                <div class="anillo_calorias" id="calorie-ring-wrap"></div>
+                <div id="home-nutrients"></div>
+                <div class="barras_nutrientes"></div>
+
+                <div style="display: flex; justify-content: flex-end; width: 100%; margin-top: 15px;">
+                    <a href="ayuda.html" target="_blank" class="btn_flecha" title="Manual de Ayuda" style="padding: 4px 8px; display: flex; align-items: center; justify-content: center; text-decoration: none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                            <line x1="12" y1="17" x2="12.01" y2="17"/>
+                        </svg>
+                    </a>
+                </div>
+        
+            </div>
+
+            <!-- escaner -->
+            <div id="vista_escaner" class="view">
+
+                <!-- titulo seccion -->
+                <h1 class="titulo_seccion">Escanear</h1>
+
+                <!-- subtitulo seccion -->
+                <div class="subtitulo_seccion">
+                   <svg class="icono_seccion" viewBox="0 0 24 24">
+                        <path d="M4 8V4h4M16 4h4v4M4 16v4h4M16 20h4v-4" />
+                        <line x1="2" y1="12" x2="22" y2="12"/>
+                    </svg>
+                    <span class="subtitulo_seccion"> Analiza y registra tus alimentos</span>
+                </div>
+                
+                <!-- contenido seccion -->
+                <div id="contenido_scaner"></div>
+
+            </div>
+
+            <!-- historial -->
+            <div id="view-stats" class="view">
+
+                <!-- titulo seccion -->
+                <h1 class="titulo_seccion">Historial</h1>
+
+                <!-- subtitulo seccion -->
+                <div class="subtitulo_seccion">
+                   <svg class="icono_seccion" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" />
+                        <polyline points="12 12 12 7" />
+                        <polyline points="12 12 16 12" />
+                    </svg>
+                    <span class="subtitulo_seccion"> Conoce lo que comes</span>
+                </div>
+
+                <br>
+                <!-- contenido seccion -->
+                <div id="contenido_historial"></div>
+
+            </div>
+    
+            <!-- perfil -->
+            <div id="view-profile" class="view">
+                
+                <!-- contenido seccion -->
+                <div id="contenido_perfil"></div>
+            </div>
+
+            <!-- detalle del alimento -->
+            <div id="view-food-detail" class="view">
+                
+                <div style="display: table; width: 100%; margin-bottom: 16px;">
+                    <div style="display: table-cell; vertical-align: middle; width: 40px;">
+                        <button class="btn_flecha" onclick="navegar('scan')" style="padding: 4px; display: inline-block;">
+                            <svg class="icono_seccion" viewBox="0 0 24 24" style="width: 20px; height: 20px;">
+                                <line x1="19" y1="12" x2="5" y2="12" />
+                                <polyline points="12 19 5 12 12 5" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div style="display: table-cell; vertical-align: middle;">
+                        <h1 class="titulo_seccion" style="margin: 0; padding-left: 8px;">Detalle del alimento</h1>
+                    </div>
+                </div>
+
+                <div class="card" style="animation:scaleIn .4s ease;margin-bottom:16px">
+
+                <!-- detalle alimento -->
+                <div class="card" style="animation:scaleIn .4s ease;margin-bottom:16px">
+                    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:4px">
+                    <h2 style="font-size:20px;font-weight:300;color:var(--card-fg)" id="detail-name"></h2>
+                    <span style="font-size:11px;background:var(--muted);color:var(--muted-fg);padding:4px 10px;border-radius:99px;font-weight:500" id="detail-serving-badge"></span>
+                    </div>
+                    <p style="font-size:36px;font-weight:800;color:var(--primary)" id="detail-cal-display"></p>
+                </div>
+
+                <!-- boton auto-ajustar -->
+                <button class="btn-autoajustar" onclick="autoAjuste()">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4V2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2"/><path d="M1 10v2a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2"/><path d="m5 8 3-3 3 3"/></svg>
+                    Auto-ajustar según tu objetivo
+                </button>
+
+                <!-- detalles nutricionales -->
+                <div class="card" id="detail-sliders"></div>
+
+                <!-- botón confirmar -->
+                <button class="btn-primary" onclick="confirmarComida()" style="margin-top:4px">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    Confirmar y guardar
+                </button>
+
+            </div>
+        
+        </div>  <!-- Fin de contenido -->
+
+          <!-- menu -->
+        <nav class="menu">
+
+            <!-- boton inicio -->
+            <button class="btn_menu active" data-view="home" onclick="navegar('home')">
+                <!-- icono -->
+                <svg class="icono_menu" viewBox="0 0 24 24">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                    <polyline points="9 22 9 12 15 12 15 22"/>
+                </svg>
+                <!-- nombre -->
+                <span>Inicio</span>      
+            </button>
+            
+            <!-- boton escaner -->
+            <button class="btn_menu" data-view="scan" onclick="navegar('scan')">
+                <!-- icono -->
+                <svg class="icono_menu" viewBox="0 0 24 24">
+                    <path d="M3 7V5a2 2 0 0 1 2-2h2"/>
+                    <path d="M17 3h2a2 2 0 0 1 2 2v2"/>
+                    <path d="M21 17v2a2 2 0 0 1-2 2h-2"/>
+                    <path d="M7 21H5a2 2 0 0 1-2-2v-2"/>
+                    <line x1="7" y1="12" x2="17" y2="12"/>
+                </svg>
+                <!-- nombre -->
+                <span>Escanear</span>
+            </button>
+
+            <!-- boton historial -->
+            <button class="btn_menu" data-view="historial" onclick="navegar('historial')">
+                <!-- icono -->
+                <svg class="icono_menu">
+                    <path d="M12 8v4l3 3" />
+                    <path d="M3.05 11a9 9 0 1 1 .5 4m-.5 5v-5h5" />
+                </svg>
+                <!-- nombre -->
+                <span>Historial</span>
+            </button>
+
+            <!-- boton perfil -->
+            <button class="btn_menu" data-view="profile" onclick="navegar('profile')">
+                <!-- icono -->
+                <svg class="icono_menu" viewBox="0 0 24 24">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                    <circle cx="12" cy="7" r="4"/>
+                </svg>
+                <!-- nombre -->
+                <span>Perfil</span>
+            </button>
+        </nav>   <!-- Fin de menu -->
+    
+    </div>  <!-- Fin de movil -->
+
+</body>
+
+</html>

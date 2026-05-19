@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Foodify - Manual de Ayuda y Soporte</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="foodify.css">
+
+    <style>
+        /* Modificamos el body para que permita scroll natural en escritorio si es necesario */
+        body {
+            display: block;
+            height: auto;
+            min-height: 100vh;
+            padding: 40px 20px;
+            box-sizing: border-box;
+        }
+        /* Contenedor principal que limita el ancho máximo en escritorio para mantener la legibilidad */
+        .contenedor-full {
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeUp .3s ease-out;
+        }
+        /* Ajuste para el textarea del reporte */
+        .reporte-textarea {
+            width: 100%;
+            min-height: 100px;
+            resize: vertical;
+            margin-top: 10px;
+            font-family: var(--letra_contenido);
+        }
+        /* Clase añadida para corregir el botón de cancelar integrado en vuestro diseño */
+        .btn-secundario {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 24px;
+            border-radius: 10px;
+            background: var(--muted);
+            color: var(--muted-fg);
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            transition: all .18s;
+        }
+        .btn-secundario:hover {
+            background: rgba(217, 209, 194, 0.8);
+            transform: translateY(-1px);
+        }
+        .btn-secundario:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="contenedor-full">
+        
+        <header class="cabecera_foodify" style="justify-content: flex-start; padding: 0 0 20px 0; font-size: 24px;">
+            FOODIFY
+        </header>
+
+        <div style="margin-bottom: 30px;">
+            <h2 class="titulo_seccion" style="font-size: 32px;">Centro de Ayuda y Soporte</h2>
+            <p class="subtitulo_seccion" style="font-size: 16px;">Todo lo que necesitas saber sobre la plataforma y cómo contactar con el equipo.</p>
+        </div>
+
+        <div class="card">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                <h3 class="rec-title" style="margin: 0; color: var(--fg); font-size: 16px;">¿Cómo calcula Foodify mis calorías?</h3>
+            </div>
+            <p class="rec-desc" style="font-size: 13px;">Utilizamos tus datos de perfil (edad, sexo, peso y altura) junto a tu objetivo diario para ajustar de manera exacta los rangos de macronutrientes recomendados.</p>
+        </div>
+
+        <div class="card">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                <h3 class="rec-title" style="margin: 0; color: var(--fg); font-size: 16px;">¿Cómo funciona el escáner?</h3>
+            </div>
+            <p class="rec-desc" style="font-size: 13px;">Al presionar el botón de escaneo se activa el lector de cámara del dispositivo. Al enfocar el código de barras de cualquier producto alimenticio, el sistema lo identificará automáticamente cruzándolo con nuestra base de datos.</p>
+        </div>
+
+        <div class="card">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                <h3 class="rec-title" style="margin: 0; color: var(--fg); font-size: 16px;">¿Cómo modifico las porciones de un alimento al escanearlo?</h3>
+            </div>
+            <p class="rec-desc" style="font-size: 13px;">Tras escanear el alimento, la app abrirá una vista previa del producto. Puedes ajustar de forma manual o rápida los parámetros deslizando el <strong>control deslizante (slider)</strong> de macronutrientes, viendo en tiempo real cómo varían antes de añadirlo a tu diario.</p>
+        </div>
+
+        <div class="card">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                <h3 class="rec-title" style="margin: 0; color: var(--fg); font-size: 16px;">¿Cómo elimino un alimento de mi registro?</h3>
+            </div>
+            <p class="rec-desc" style="font-size: 13px;">Desde el diario de tu jornada, simplemente desliza el alimento hacia la izquierda o mantén pulsado su nombre. Aparecerá un icono de papelera roja que te permitirá borrarlo del registro de forma definitiva.</p>
+        </div>
+
+        <div class="card">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                <h3 class="rec-title" style="margin: 0; color: var(--fg); font-size: 16px;">¿Cómo puedo eliminar mi cuenta de Foodify?</h3>
+            </div>
+            <p class="rec-desc" style="font-size: 13px;">Para borrar tu cuenta y todos tus datos guardados, entra en la sección de Perfil (Ajustes), baja hasta el fondo del panel y pulsa en la opción <strong style="color: #e63946;">"Eliminar Cuenta"</strong>. El sistema te pedirá una confirmación final.</p>
+        </div>
+
+        <div class="divider">
+            <span>¿Aún necesitas ayuda?</span>
+        </div>
+
+        <div class="card" style="background: rgba(250, 246, 239, 0.75);">
+            <h3 class="rec-title" style="color: var(--primary); font-family: var(--letra_titulo); text-transform: uppercase; font-size: 11px; letter-spacing: 0.5px; margin-bottom: 10px;">
+                Contacto Técnico
+            </h3>
+            
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+                <div class="nutrient-chip" style="display: flex; flex-wrap: wrap; gap: 12px;">
+                    <span class="chip-dot" style="background: var(--primary-light); align-self: center;"></span>
+                    <span style="color: var(--fg); font-weight: 500;">Soporte directo por Email:</span> 
+                    <a href="mailto:ana.mesram@usal.es" style="color: var(--primary); text-decoration: none; font-weight: 600;">ana.mesram@usal.es</a>
+                    <span style="color: var(--muted-fg);">|</span>
+                    <a href="mailto:catasalvatieraj@usal.es" style="color: var(--primary); text-decoration: none; font-weight: 600;">catasalvatieraj@usal.es</a>
+                </div>
+                
+                <p class="rec-desc" style="margin-top: 4px; font-size: 11px; line-height: 1.4;">
+                    Aplicación desarrollada para la asignatura de <strong>Interacción Persona-Ordenador</strong>.<br>
+                    Facultad de Ciencias, Universidad de Salamanca (Curso 2025/26).
+                </p>
+            </div>
+        </div>
+
+        <div style="margin-top: 20px;">
+            
+            <button id="btn-abrir-reporte" class="btn-primary" type="button" onclick="mostrarFormularioReporte()">
+                <svg xmlns="http://www.w3.org/2000/svg" style="width:18px; height:18px;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+                </svg>
+                Enviar comentarios / Reportar error
+            </button>
+
+            <div id="card-formulario-reporte" class="card hidden" style="margin-top: 15px; animation: fadeIn 0.3s ease;">
+                <label class="auth-label" for="texto-reporte" style="color: var(--fg); font-size: 13px;">Describe el problema o sugerencia:</label>
+                <textarea id="texto-reporte" class="input reporte-textarea" placeholder="Escribe aquí tus comentarios..."></textarea>
+                
+                <div style="display: flex; gap: 12px; margin-top: 16px;">
+                    <button class="btn-primary" style="background: var(--primary); width: auto; padding: 14px 28px;" onclick="enviarReporte()">
+                        Confirmar y Enviar
+                    </button>
+                    <button class="btn-secundario" type="button" onclick="cancelarReporte()">
+                        Cancelar
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="toast-confirmacion" class="toast-msg hidden">
+        ¡Mensaje enviado correctamente! OK
+    </div>
+
+    <script>
+        function mostrarFormularioReporte() {
+            document.getElementById('card-formulario-reporte').classList.remove('hidden');
+            document.getElementById('btn-abrir-reporte').classList.add('hidden');
+            document.getElementById('texto-reporte').focus();
+        }
+
+        function cancelarReporte() {
+            document.getElementById('card-formulario-reporte').classList.add('hidden');
+            document.getElementById('btn-abrir-reporte').classList.remove('hidden');
+            document.getElementById('texto-reporte').value = ''; 
+        }
+
+        function enviarReporte() {
+            const texto = document.getElementById('texto-reporte').value.trim();
+            
+            if (texto === "") {
+                alert("Por favor, escribe un comentario antes de realizar el envío.");
+                return;
+            }
+
+            document.getElementById('card-formulario-reporte').classList.add('hidden');
+            document.getElementById('btn-abrir-reporte').classList.remove('hidden');
+            document.getElementById('texto-reporte').value = '';
+
+            const toast = document.getElementById('toast-confirmacion');
+            toast.classList.remove('hidden');
+
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 3000);
+        }
+    </script>
+
+</body>
+</html>
